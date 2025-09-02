@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "question": "Qual é a velocidade máxima permitida em vias urbanas, salvo sinalização em contrário?",
+    "options": [
+      "40 km/h",
+      "50 km/h", 
+      "60 km/h",
+      "70 km/h"
+    ],
+    "correct": 2,
+    "explanation": "Segundo o Art. 61 do CTB, a velocidade máxima em vias urbanas é de 60 km/h, salvo sinalização em contrário.",
+    "reference": "CTB - Art. 61, Inc. I"
+  },
+  {
+    "id": 2,
+    "question": "É obrigatório o uso do cinto de segurança para:",
+    "options": [
+      "Apenas o condutor",
+      "Condutor e passageiro da frente",
+      "Todos os ocupantes do veículo",
+      "Apenas em rodovias"
+    ],
+    "correct": 2,
+    "explanation": "O Art. 65 do CTB determina que é obrigatório o uso do cinto de segurança para condutor e passageiros em todas as vias do território nacional.",
+    "reference": "CTB - Art. 65"
+  },
+  {
+    "id": 3,
+    "question": "A distância mínima para estacionar antes da faixa de pedestres é:",
+    "options": [
+      "5 metros antes",
+      "3 metros antes",
+      "Na própria faixa apenas",
+      "Não há distância específica"
+    ],
+    "correct": 0,
+    "explanation": "Segundo o CTB Art. 181, é proibido estacionar a menos de 5 metros das esquinas e da faixa de pedestres.",
+    "reference": "CTB - Art. 181, Inc. XVII"
+  },
+  {
+    "id": 4,
+    "question": "O que significa uma placa triangular vermelha com bordas brancas?",
+    "options": [
+      "Pare obrigatório",
+      "Dê a preferência",
+      "Proibido estacionar",
+      "Velocidade máxima"
+    ],
+    "correct": 1,
+    "explanation": "A placa triangular vermelha com bordas brancas significa 'Dê a preferência', indicando que o condutor deve dar prioridade aos veículos da via preferencial.",
+    "reference": "CTB - Anexo II"
+  },
+  {
+    "id": 5,
+    "question": "Em cruzamentos não sinalizados, quem tem a preferência de passagem?",
+    "options": [
+      "Veículo que vem da direita",
+      "Veículo que vem da esquerda", 
+      "Veículo que chegou primeiro",
+      "O veículo maior"
+    ],
+    "correct": 0,
+    "explanation": "Segundo o Art. 29 do CTB, nos cruzamentos não sinalizados, tem preferência de passagem o veículo que vem da direita do condutor que pretende ingressar no cruzamento.",
+    "reference": "CTB - Art. 29, Inc. III, alínea 'c'"
+  },
+  {
+    "id": 6,
+    "question": "A multa por dirigir sem CNH é classificada como infração:",
+    "options": [
+      "Leve",
+      "Média",
+      "Grave", 
+      "Gravíssima"
+    ],
+    "correct": 3,
+    "explanation": "Dirigir sem possuir CNH é infração gravíssima, conforme Art. 162 do CTB, com multa e apreensão do veículo.",
+    "reference": "CTB - Art. 162"
+  },
+  {
+    "id": 7,
+    "question": "O que deve fazer o condutor ao se aproximar de uma ambulância com sirene ligada?",
+    "options": [
+      "Continuar normalmente",
+      "Acelerar para dar passagem",
+      "Parar imediatamente",
+      "Dar passagem livre, desviando para o acostamento ou faixa da direita"
+    ],
+    "correct": 3,
+    "explanation": "O Art. 29 do CTB estabelece que os condutores devem dar passagem livre aos veículos de emergência quando em serviço de urgência e devidamente identificados.",
+    "reference": "CTB - Art. 29, Inc. VII"
+  },
+  {
+    "id": 8,
+    "question": "Qual o limite de álcool no sangue permitido para condutores?",
+    "options": [
+      "0,05 mg/L",
+      "Zero tolerância",
+      "0,2 mg/L",
+      "0,1 mg/L"
+    ],
+    "correct": 1,
+    "explanation": "A Lei 11.705/2008 (Lei Seca) estabelece tolerância zero para álcool no sangue. Qualquer concentração de álcool configura infração gravíssima.",
+    "reference": "CTB - Art. 165"
+  },
+  {
+    "id": 9,
+    "question": "Quando é permitido estacionar em fila dupla?",
+    "options": [
+      "Por até 5 minutos",
+      "Para embarque e desembarque rápido",
+      "Em caso de emergência médica",
+      "Nunca é permitido"
+    ],
+    "correct": 3,
+    "explanation": "O estacionamento em fila dupla é sempre proibido pelo Art. 181 do CTB, podendo causar multa e remoção do veículo.",
+    "reference": "CTB - Art. 181"
+  },
+  {
+    "id": 10,
+    "question": "A validade da CNH categoria B é de:",
+    "options": [
+      "3 anos",
+      "5 anos",
+      "10 anos",
+      "Varia conforme a idade do condutor"
+    ],
+    "correct": 3,
+    "explanation": "A validade da CNH varia: 10 anos para condutores até 50 anos, 5 anos de 50 a 70 anos, e 3 anos acima de 70 anos, conforme Art. 147 do CTB.",
+    "reference": "CTB - Art. 147, §1º"
+  }
+]

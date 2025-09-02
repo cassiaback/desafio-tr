@@ -3,58 +3,36 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { TrafficIcon } from "@/components/TrafficIcon";
 import { Progress } from "@/components/ui/progress";
-import { ArrowLeft, Trophy, Clock, Target, CheckCircle } from "lucide-react";
+import { ArrowLeft, Trophy, Clock, Target, CheckCircle, RotateCcw } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import questionsData from "@/data/questions.json";
 
 const Game = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
+  const [questions, setQuestions] = useState<any[]>([]);
 
-  // Exemplo de perguntas baseadas em leis reais do trânsito
-  const questions = [
-    {
-      id: 1,
-      question: "Qual é a velocidade máxima permitida em vias urbanas, salvo sinalização em contrário?",
-      options: [
-        "40 km/h",
-        "50 km/h", 
-        "60 km/h",
-        "70 km/h"
-      ],
-      correct: 2,
-      explanation: "Segundo o Art. 61 do CTB, a velocidade máxima em vias urbanas é de 60 km/h, salvo sinalização em contrário.",
-      reference: "CTB - Art. 61, Inc. I"
-    },
-    {
-      id: 2,
-      question: "É obrigatório o uso do cinto de segurança para:",
-      options: [
-        "Apenas o condutor",
-        "Condutor e passageiro da frente",
-        "Todos os ocupantes do veículo",
-        "Apenas em rodovias"
-      ],
-      correct: 2,
-      explanation: "O Art. 65 do CTB determina que é obrigatório o uso do cinto de segurança para condutor e passageiros em todas as vias do território nacional.",
-      reference: "CTB - Art. 65"
-    },
-    {
-      id: 3,
-      question: "A faixa de pedestres deve ser respeitada em que distância?",
-      options: [
-        "5 metros antes",
-        "3 metros antes",
-        "Na própria faixa apenas",
-        "Não há distância específica"
-      ],
-      correct: 0,
-      explanation: "Segundo o CTB, é proibido estacionar a menos de 5 metros das esquinas e da faixa de pedestres.",
-      reference: "CTB - Art. 181, Inc. XVII"
-    }
-  ];
+  // Load questions on component mount
+  useEffect(() => {
+    // Shuffle questions and take 5 random ones for each game session
+    const shuffled = [...questionsData].sort(() => Math.random() - 0.5).slice(0, 5);
+    setQuestions(shuffled);
+  }, []);
+
+  // Early return if questions not loaded
+  if (questions.length === 0) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <TrafficIcon className="w-16 h-16 mx-auto mb-4 text-primary animate-pulse" />
+          <p className="text-muted-foreground">Carregando perguntas...</p>
+        </div>
+      </div>
+    );
+  }
 
   const currentQ = questions[currentQuestion];
   const progress = ((currentQuestion + 1) / questions.length) * 100;
@@ -83,6 +61,9 @@ const Game = () => {
     setScore(0);
     setSelectedAnswer(null);
     setShowResult(false);
+    // Shuffle and get new set of questions
+    const shuffled = [...questionsData].sort(() => Math.random() - 0.5).slice(0, 5);
+    setQuestions(shuffled);
   };
 
   const isGameFinished = currentQuestion === questions.length - 1 && showResult;
@@ -231,20 +212,35 @@ const Game = () => {
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <div className="text-center">
                     {score >= questions.length * 0.8 ? (
-                      <Badge variant="default" className="bg-gradient-primary text-white">
-                        🏆 Excelente! Você domina as leis de trânsito!
-                      </Badge>
+                      <div className="space-y-2">
+                        <Badge className="bg-gradient-primary text-white px-4 py-2 text-base">
+                          🏆 Mestre do Trânsito
+                        </Badge>
+                        <p className="text-sm text-muted-foreground">
+                          Excelente! Você domina as leis de trânsito!
+                        </p>
+                      </div>
                     ) : score >= questions.length * 0.6 ? (
-                      <Badge variant="secondary">
-                        👍 Bom trabalho! Continue estudando!
-                      </Badge>
+                      <div className="space-y-2">
+                        <Badge variant="secondary" className="px-4 py-2 text-base">
+                          👍 Intermediário
+                        </Badge>
+                        <p className="text-sm text-muted-foreground">
+                          Bom trabalho! Continue estudando!
+                        </p>
+                      </div>
                     ) : (
-                      <Badge variant="outline">
-                        📚 Que tal revisar o conteúdo e tentar novamente?
-                      </Badge>
+                      <div className="space-y-2">
+                        <Badge variant="outline" className="px-4 py-2 text-base">
+                          📚 Iniciante
+                        </Badge>
+                        <p className="text-sm text-muted-foreground">
+                          Que tal revisar o conteúdo e tentar novamente?
+                        </p>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -252,11 +248,18 @@ const Game = () => {
             </Card>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="game" size="lg" onClick={handleRestartGame}>
+              <Button 
+                variant="default" 
+                size="lg" 
+                onClick={handleRestartGame}
+                className="bg-gradient-primary text-white"
+              >
+                <RotateCcw className="w-4 h-4 mr-2" />
                 Jogar Novamente
               </Button>
               <Link to="/estudar">
                 <Button variant="secondary" size="lg">
+                  <Target className="w-4 h-4 mr-2" />
                   Estudar Leis
                 </Button>
               </Link>

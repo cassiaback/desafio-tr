@@ -8,50 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Traffic-inspired color system */
-    --background: 210 25% 98%;
-    --foreground: 220 15% 15%;
+    /* User's custom color palette */
+    --background: 31 58% 91%; /* Bege claro original - #F5E9DC */
+    --foreground: 0 80% 20%; /* Bordô escuro - #5C0A0A */
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
+    --card: 19 32% 90%; /* Bege claro alternativo - #EEE1DB */
+    --card-foreground: 0 80% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+    --popover: 19 32% 90%;
+    --popover-foreground: 0 80% 20%;
 
-    /* Green traffic light - primary action */
-    --primary: 142 76% 35%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 142 76% 45%;
+    /* Bordô escuro - primary actions */
+    --primary: 0 80% 20%; /* #5C0A0A */
+    --primary-foreground: 31 58% 91%;
+    --primary-glow: 0 80% 30%;
 
-    /* Blue traffic signs */
-    --secondary: 215 85% 55%;
-    --secondary-foreground: 0 0% 100%;
+    /* Cappuccino rosado - secondary */
+    --secondary: 19 50% 64%; /* #D19275 */
+    --secondary-foreground: 0 80% 20%;
 
-    --muted: 210 25% 95%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 19 32% 88%;
+    --muted-foreground: 0 60% 40%;
 
-    /* Yellow/Orange warning */
-    --accent: 45 95% 55%;
-    --accent-foreground: 220 15% 15%;
+    /* Accent using cappuccino tone */
+    --accent: 19 50% 64%;
+    --accent-foreground: 0 80% 20%;
 
-    /* Red traffic light - danger */
+    /* Destructive (keeping red for errors) */
     --destructive: 0 85% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 95%;
-    --ring: 142 76% 35%;
+    --border: 19 30% 85%;
+    --input: 19 32% 88%;
+    --ring: 0 80% 20%;
 
-    /* Traffic-themed gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(142, 76%, 35%), hsl(142, 76%, 45%));
-    --gradient-secondary: linear-gradient(135deg, hsl(215, 85%, 55%), hsl(215, 85%, 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(142, 76%, 35%), hsl(215, 85%, 55%));
+    /* Custom gradients using new palette */
+    --gradient-primary: linear-gradient(135deg, hsl(0, 80%, 20%), hsl(0, 80%, 30%));
+    --gradient-secondary: linear-gradient(135deg, hsl(19, 50%, 64%), hsl(19, 50%, 74%));
+    --gradient-hero: linear-gradient(135deg, hsl(0, 80%, 20%), hsl(19, 50%, 64%));
     --gradient-warning: linear-gradient(135deg, hsl(45, 95%, 55%), hsl(35, 95%, 60%));
     
-    /* Shadows with traffic colors */
-    --shadow-primary: 0 10px 30px -10px hsl(142, 76%, 35%, 0.3);
-    --shadow-secondary: 0 10px 30px -10px hsl(215, 85%, 55%, 0.3);
-    --shadow-glow: 0 0 40px hsl(142, 76%, 45%, 0.4);
+    /* Shadows using new palette */
+    --shadow-primary: 0 10px 30px -10px hsl(0, 80%, 20%, 0.3);
+    --shadow-secondary: 0 10px 30px -10px hsl(19, 50%, 64%, 0.3);
+    --shadow-glow: 0 0 40px hsl(0, 80%, 30%, 0.4);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -77,44 +77,44 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark mode with traffic theme */
-    --background: 220 15% 8%;
-    --foreground: 210 25% 95%;
+    /* Dark mode with custom palette */
+    --background: 0 40% 8%; /* Dark background */
+    --foreground: 31 58% 91%; /* Light beige text */
 
-    --card: 220 15% 10%;
-    --card-foreground: 210 25% 95%;
+    --card: 0 40% 12%; /* Darker card background */
+    --card-foreground: 31 58% 91%;
 
-    --popover: 220 15% 10%;
-    --popover-foreground: 210 25% 95%;
+    --popover: 0 40% 12%;
+    --popover-foreground: 31 58% 91%;
 
-    /* Brighter green for dark mode */
-    --primary: 142 76% 45%;
-    --primary-foreground: 220 15% 8%;
-    --primary-glow: 142 76% 55%;
+    /* Lighter burgundy for dark mode */
+    --primary: 0 70% 40%;
+    --primary-foreground: 31 58% 91%;
+    --primary-glow: 0 70% 50%;
 
-    /* Brighter blue for dark mode */
-    --secondary: 215 85% 65%;
-    --secondary-foreground: 220 15% 8%;
+    /* Lighter cappuccino for dark mode */
+    --secondary: 19 60% 74%;
+    --secondary-foreground: 0 40% 8%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 65%;
+    --muted: 0 30% 15%;
+    --muted-foreground: 19 40% 70%;
 
-    /* Brighter yellow for dark mode */
-    --accent: 45 95% 65%;
-    --accent-foreground: 220 15% 8%;
+    /* Lighter accent for dark mode */
+    --accent: 19 60% 74%;
+    --accent-foreground: 0 40% 8%;
 
     /* Softer red for dark mode */
     --destructive: 0 85% 65%;
-    --destructive-foreground: 220 15% 8%;
+    --destructive-foreground: 0 40% 8%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 15%;
-    --ring: 142 76% 45%;
+    --border: 0 30% 25%;
+    --input: 0 30% 18%;
+    --ring: 0 70% 40%;
 
     /* Updated gradients for dark mode */
-    --gradient-primary: linear-gradient(135deg, hsl(142, 76%, 45%), hsl(142, 76%, 55%));
-    --gradient-secondary: linear-gradient(135deg, hsl(215, 85%, 65%), hsl(215, 85%, 75%));
-    --gradient-hero: linear-gradient(135deg, hsl(142, 76%, 45%), hsl(215, 85%, 65%));
+    --gradient-primary: linear-gradient(135deg, hsl(0, 70%, 40%), hsl(0, 70%, 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(19, 60%, 74%), hsl(19, 60%, 84%));
+    --gradient-hero: linear-gradient(135deg, hsl(0, 70%, 40%), hsl(19, 60%, 74%));
     --gradient-warning: linear-gradient(135deg, hsl(45, 95%, 65%), hsl(35, 95%, 70%));
 
     --sidebar-background: 240 5.9% 10%;
