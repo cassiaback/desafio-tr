@@ -39,12 +39,18 @@ const Index = () => {
             <h1 className="text-xl font-bold text-foreground">Desafio do Trânsito SC</h1>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="sm">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => document.getElementById("como-funciona")?.scrollIntoView({ behavior: "smooth" })}
+            >
               Como Funciona
             </Button>
-            <Button variant="outline" size="sm">
-              Contato
-            </Button>
+            <a href="https://www.detran.sc.gov.br/fale-conosco" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm">
+                Contato
+              </Button>
+            </a>
           </div>
         </div>
       </header>
@@ -117,7 +123,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-muted/30">
+      <section id="como-funciona" className="py-20 bg-muted/30 scroll-mt-16">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold">
