@@ -10,22 +10,26 @@ const Index = () => {
     {
       icon: Target,
       title: "Quiz Interativo",
-      description: "Perguntas baseadas em provas reais do DETRAN/SC com feedback imediato"
+      description: "Perguntas baseadas em provas reais do DETRAN/SC com feedback imediato",
+      link: "/jogo"
     },
     {
       icon: BookOpen,
       title: "Conteúdo Oficial",
-      description: "Baseado no CTB, DETRAN/SC e resoluções do CONTRAN"
+      description: "Baseado no CTB, DETRAN/SC e resoluções do CONTRAN",
+      link: "/estudar"
     },
     {
       icon: Trophy,
       title: "Gamificação",
-      description: "Pontuação, medalhas e ranking para tornar o aprendizado divertido"
+      description: "Pontuação, medalhas e ranking para tornar o aprendizado divertido",
+      link: "/jogo"
     },
     {
       icon: Users,
       title: "Para Todos",
-      description: "Estudantes de autoescola, candidatos à CNH e motoristas experientes"
+      description: "Estudantes de autoescola, candidatos à CNH e motoristas experientes",
+      link: "/estudar"
     }
   ];
 
@@ -137,19 +141,21 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <Card key={index} className="relative group hover:shadow-lg transition-all duration-300">
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <CardTitle className="text-lg">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-center">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+              <Link key={index} to={feature.link} className="block">
+                <Card className="relative group hover:shadow-lg hover:border-primary/50 transition-all duration-300 cursor-pointer h-full">
+                  <CardHeader className="text-center pb-4">
+                    <div className="mx-auto w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <CardTitle className="text-lg">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-center">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
